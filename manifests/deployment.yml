@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akspocdemo-960f"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akspocdemo-960f"
+  template:
+    metadata:
+      labels:
+        app: "akspocdemo-960f"
+    spec:
+      containers:
+        - name: "akspocdemo-960f"
+          image: "reactappregistry.azurecr.io/akspocdemo"
+          ports:
+          - containerPort: 80
